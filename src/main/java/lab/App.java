@@ -8,7 +8,7 @@ public class App {
         // BillingModule tells you how to wire the components
         // Guice.createInjector creates the components according to the module plan
         // The results objects are inside the "Injector" DI container.
-        Injector injector = Guice.createInjector(new BillingModule());
+        Injector injector = Guice.createInjector(new BillingModule(new Config()));
 
         // Get component from the container, e.g. injector
         BillingService billingService1 = injector.getInstance(BillingService.class);
